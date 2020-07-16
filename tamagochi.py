@@ -4,6 +4,7 @@ from tkinter import ttk
 from myClass import Pet
 
 def game():
+    global display
     display = tk.Tk()
     display.geometry("400x400")
 
@@ -42,5 +43,9 @@ def new_char():
 def pet_create(name, age, gender):
     pet = Pet(name, age, gender)
     print(pet.__dict__)
+
+def start_game(animal):
+    display.destroy()
+    display_game = tk.Tk()
 
 game()
