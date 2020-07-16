@@ -31,5 +31,7 @@ def new_char():
     field2.grid(row = 1, column = 1)
     field3.grid(row = 2, column = 1)
 
-
+    button = ttk.Button(char_okno, text = "Создать питомца")
+    button.grid(row = 3, column = 0)
+    char_okno.mainloop()
 game()
