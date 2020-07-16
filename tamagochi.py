@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
+from myClass import Pet
+
 def game():
     display = tk.Tk()
     display.geometry("400x400")
@@ -34,4 +36,10 @@ def new_char():
     button = ttk.Button(char_okno, text = "Создать питомца")
     button.grid(row = 3, column = 0)
     char_okno.mainloop()
+
+
+def pet_create(name, age, gender):
+    cat = Pet(name, age, gender)
+    print(cat.__dict__)
+
 game()
