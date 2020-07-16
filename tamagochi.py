@@ -33,13 +33,14 @@ def new_char():
     field2.grid(row = 1, column = 1)
     field3.grid(row = 2, column = 1)
 
-    button = ttk.Button(char_okno, text = "Создать питомца")
+    button = ttk.Button(char_okno, text = "Создать питомца", command=lambda: pet_create(
+        field1.get(), field2.get(), field3.get()))
     button.grid(row = 3, column = 0)
     char_okno.mainloop()
 
 
 def pet_create(name, age, gender):
-    cat = Pet(name, age, gender)
-    print(cat.__dict__)
+    pet = Pet(name, age, gender)
+    print(pet.__dict__)
 
 game()
