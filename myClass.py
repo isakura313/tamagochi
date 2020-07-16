@@ -3,6 +3,11 @@ class Pet:
         self.name = name
         self.age = age
         self.gender = gender
+        self.hp = 100
+        self.energy = 50
+        self.mood = 50
+        self.money = 1000
+        self.time = 0
 
-chickenBombone = Pet("Chicken", 2, 1)
-print(chickenBombone.__dict__)
+
+
