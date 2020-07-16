@@ -3,3 +3,6 @@ class Pet:
         self.name = name
         self.age = age
         self.gender = gender
+
+chickenBombone = Pet("Chicken", 2, 1)
+print(chickenBombone.__dict__)
