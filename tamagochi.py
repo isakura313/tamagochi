@@ -19,4 +19,17 @@ def new_char():
     label2 = tk.Label(char_okno, text = 'Возраст питомца')
     label3 = tk.Label(char_okno, text = 'Пол питомца')
 
+    label1.grid(row = 0, column = 0)
+    label2.grid(row = 1, column = 0)
+    label3.grid(row = 2, column = 0)
+
+    field1 = tk.Entry(char_okno)
+    field2 = tk.Entry(char_okno)
+    field3 = tk.Entry(char_okno)
+
+    field1.grid(row = 0, column = 1)
+    field2.grid(row = 1, column = 1)
+    field3.grid(row = 2, column = 1)
+
+
 game()
