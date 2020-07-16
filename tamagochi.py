@@ -12,4 +12,11 @@ def game():
     btn2.place(relx = 0.25, rely = 0.5)
     display.mainloop()
 
+def new_char():
+    char_okno = tk.Toplevel()
+
+    label1 = tk.Label(char_okno, text = 'Имя питомца')
+    label2 = tk.Label(char_okno, text = 'Возраст питомца')
+    label3 = tk.Label(char_okno, text = 'Пол питомца')
+
 game()
