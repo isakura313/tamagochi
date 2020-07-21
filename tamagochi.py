@@ -72,10 +72,6 @@ def start_game(animal):
     label_mood.grid(row = 1, column = 1, sticky = tk.S)
 
 
-
-
-
-
     btn_hp = ttk.Button(display_game, text = "Дать еды")
     btn_hp.grid(row = 2, column = 1)
     btn_en = ttk.Button(display_game, text = "Дать отдохнуть")
@@ -89,6 +85,14 @@ def start_game(animal):
     label_en_text.grid(row = 0, column = 2)
     label_mood_text = tk.Label(display_game, text = "Настроение")
     label_mood_text.grid(row = 0, column = 3)
+
+    def game_har(animal):
+        if animal.hp > 0:
+            animal.hp -= 10
+            label_hp.configure(height = percent(animal.hp), text = animal.hp)
+            display_game.after(2000, lambda: game_har(animal))
+
+    display_game.after(5000, lambda: game_har(animal))
 
     def work(animal):
         btn_hp.configure(state='disabled')
