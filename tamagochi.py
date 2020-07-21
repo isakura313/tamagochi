@@ -47,7 +47,7 @@ def pet_create(name, age, gender):
 def start_game(animal):
     display.destroy()
     display_game = tk.Tk()
-    label = tk.Label(display_game)
+    label = tk.Label(display_game, text=f'Имя: {animal.name} \nВозраст: {animal.age} \n{animal.gender}')
     label.grid(row = 0, column = 0)
 
 game()
