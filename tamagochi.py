@@ -64,6 +64,11 @@ def start_game(animal):
     label_test2.grid(row = 1, column = 2,  sticky = tk.S)
     label_test3.grid(row = 1, column = 3,  sticky = tk.S)
 
+    label_hp = tk.Label(display_game, text = animal.hp, bg='red', height = percent(animal.hp), width = 6)
+
+
+
+
     btn_hp = ttk.Button(display_game, text = "Дать еды")
     btn_hp.grid(row = 2, column = 1)
     btn_en = ttk.Button(display_game, text = "Дать отдохнуть")
