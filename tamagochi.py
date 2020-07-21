@@ -83,6 +83,10 @@ def start_game(animal):
         btn_en.configure(state='disabled')
         btn_mood.configure(state='disabled')
         btn_money.configure(state='disabled')
+        display_game.after(5000, lambda:btn_money.configure(state='enabled'))
+        display_game.after(5000, lambda:btn_hp.configure(state='enabled'))
+        display_game.after(5000, lambda:btn_en.configure(state='enabled'))
+        display_game.after(5000, lambda:btn_mood.configure(state='enabled'))
         animal.money += 200
         label_money.configure(text=f'Всего денег {animal.money}')
 
