@@ -61,5 +61,8 @@ def start_game(animal):
     label_test3 = tk.Label(display_game, bg='black', height = 12, width = 6)
 
     label_test.grid(row = 1, column = 1,  sticky = tk.S)
+    label_test2.grid(row = 1, column = 2,  sticky = tk.S)
+    label_test3.grid(row = 1, column = 3,  sticky = tk.S)
+
 
 game()
