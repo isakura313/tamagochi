@@ -53,7 +53,7 @@ def start_game(animal):
     label_money = tk.Label(display_game, text = f'Всего денег : {animal.money}')
     label_money.grid(row =1, column = 0)
 
-    btn_money = ttk.Button(display_game, text = "Пойти на работу")
+    btn_money = ttk.Button(display_game, text = "Пойти на работу", command = lambda: work(animal))
     btn_money.grid(row = 2, column = 0)
 
     label_test = tk.Label(display_game, bg='black', height = 12, width = 6)
@@ -78,6 +78,14 @@ def start_game(animal):
     label_mood_text = tk.Label(display_game, text = "Настроение")
     label_mood_text.grid(row = 0, column = 3)
 
+    def work(animal):
+        btn_hp.configure(state='disabled')
+        btn_en.configure(state='disabled')
+        btn_mood.configure(state='disabled')
+        btn_money.configure(state='disabled')
+        animal.money += 200
+        label_money.configure(text=f'Всего денег {animal.money}')
+
 def percent(score):
     perc = score * 0.12
     if perc > 12:
@@ -86,4 +94,6 @@ def percent(score):
 
 
 
-game()
+
+if __name__ == '__main__':
+    game()
