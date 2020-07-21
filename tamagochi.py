@@ -9,7 +9,7 @@ def game():
     display.geometry("400x400")
 
     btn1 = ttk.Button(display, text = "Начать новую игру", command = lambda: new_char())
-    btn1.place(x = 70, y =120)
+    btn1.place(x = 70, y = 120)
 
     btn2 = ttk.Button(display, text = "Продолжить игру")
     btn2.place(relx = 0.25, rely = 0.5)
@@ -49,5 +49,17 @@ def start_game(animal):
     display_game = tk.Tk()
     label = tk.Label(display_game, text=f'Имя: {animal.name} \nВозраст: {animal.age} \nПол:{animal.gender}')
     label.grid(row = 0, column = 0)
+
+    label_money = tk.Label(display_game, text = f'Всего денег : {animal.money}')
+    label_money.grid(row =1, column = 0)
+
+    btn_money = ttk.Button(display_game, text = "Пойти на работу")
+    btn_money.grid(row = 2, column = 0)
+
+    label_test = tk.Label(display_game, bg='black', height = 12, width = 6)
+    label_test2 = tk.Label(display_game, bg='black', height = 12, width = 6)
+    label_test3 = tk.Label(display_game, bg='black', height = 12, width = 6)
+
+    label_test.grid(row = 1, column = 1,  sticky = tk.S)
 
 game()
