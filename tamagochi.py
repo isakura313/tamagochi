@@ -71,6 +71,19 @@ def start_game(animal):
     btn_mood = ttk.Button(display_game, text = "Поиграть")
     btn_mood.grid(row = 2, column = 3)
 
+    label_hp_text = tk.Label(display_game, text = 'Голод')
+    label_hp_text.grid(row = 0, column = 1)
+    label_en_text = tk.Label(display_game, text = "Энергия")
+    label_en_text.grid(row = 0, column = 2)
+    label_mood_text = tk.Label(display_game, text = "Настроение")
+    label_mood_text.grid(row = 0, column = 3)
+
+def percent(score):
+    perc = score * 0.12
+    if perc > 12:
+        perc = 12
+    return round(perc)
+
 
 
 game()
