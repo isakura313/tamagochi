@@ -69,7 +69,7 @@ def start_game(animal):
     btn_en = ttk.Button(display_game, text = "Дать отдохнуть")
     btn_en.grid(row = 2, column = 2)
     btn_mood = ttk.Button(display_game, text = "Поиграть")
-    btn_en.grid(row = 2, column = 3)
+    btn_mood.grid(row = 2, column = 3)
 
 
 
