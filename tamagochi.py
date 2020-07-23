@@ -98,10 +98,9 @@ def start_game(animal):
         if animal.energy > 0:
             animal.energy -= 10
             label_en.configure(height = percent(animal.energy), text = animal.energy)
-
         else:
-            animal.energy -= 10
-            label_hp.configure(height=percent(animal.energy), text=animal.energy)
+            animal.hp -= 10
+            label_hp.configure(height=percent(animal.hp), text=animal.hp)
         display_game.after(5000, lambda: game_har2(animal))
 
     display_game.after(5000, lambda: game_har1(animal))
