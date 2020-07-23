@@ -72,7 +72,7 @@ def start_game(animal):
     label_mood.grid(row = 1, column = 3, sticky = tk.S)
 
 
-    btn_hp = ttk.Button(display_game, text = "Дать еды")
+    btn_hp = ttk.Button(display_game, text = "Дать еды", command = lambda: buff(animal, 'Покормить'))
     btn_hp.grid(row = 2, column = 1)
     btn_en = ttk.Button(display_game, text = "Дать отдохнуть")
     btn_en.grid(row = 2, column = 2)
