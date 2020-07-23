@@ -74,9 +74,9 @@ def start_game(animal):
 
     btn_hp = ttk.Button(display_game, text = "Дать еды", command = lambda: buff(animal, 'Покормить'))
     btn_hp.grid(row = 2, column = 1)
-    btn_en = ttk.Button(display_game, text = "Дать отдохнуть")
+    btn_en = ttk.Button(display_game, text = "Дать отдохнуть", command = lambda: buff(animal, 'Отдохнуть'))
     btn_en.grid(row = 2, column = 2)
-    btn_mood = ttk.Button(display_game, text = "Поиграть")
+    btn_mood = ttk.Button(display_game, text = "Поиграть", command = lambda: buff(animal, 'Поиграть'))
     btn_mood.grid(row = 2, column = 3)
 
     label_hp_text = tk.Label(display_game, text = 'Голод')
