@@ -119,7 +119,7 @@ def start_game(animal):
     def buff(animal, arg):
         if arg == 'Покормить' and animal.hp < 100 and animal.money > 49:
             animal.money -= 50
-            animal.hp += 10
+            animal.hp += 20
             label_money.configure(text = f'Всего денег {animal.money}')
             label_hp.configure(height = percent(animal.hp), text = animal.hp)
         elif arg == "Отдохнуть" and animal.energy < 100:
@@ -134,6 +134,15 @@ def start_game(animal):
             display_game.after(4000, lambda: btn_mood.configure(state='enabled'))
 
             label_en.configure(height = percent(animal.energy), text = animal.energy)
+        elif arg == 'Поиграть' and animal.mood < 100:
+            animal.mood += 20
+            if animal.mood > 100:
+                animal.mood = 100
+            animal.energy -= 10
+            animal.hp -= 5
+            label_mood.configure(height = percent(animal.mood), text = animal.mood)
+            label_mood.configure(height = percent(animal.energy), text = animal.energy)
+            label_mood.configure(height = percent(animal.hp), text = animal.hp)
 
 
     def work(animal):
