@@ -122,7 +122,18 @@ def start_game(animal):
             animal.hp += 10
             label_money.configure(text = f'Всего денег {animal.money}')
             label_hp.configure(height = percent(animal.hp), text = animal.hp)
+        elif arg == "Отдохнуть" and animal.energy < 100:
+            animal.energy += 40
+            if animal.energy > 100:
+                animal.energy = 100
+            btn_mood.configure(state='disabled')
+            btn_en.configure(state='disabled')
+            btn_hp.configure(state='disabled')
+            display_game.after(4000, lambda: btn_hp.configure(state='enabled'))
+            display_game.after(4000, lambda: btn_en.configure(state='enabled'))
+            display_game.after(4000, lambda: btn_mood.configure(state='enabled'))
 
+            label_en.configure(height = percent(animal.energy), text = animal.energy)
 
 
     def work(animal):
