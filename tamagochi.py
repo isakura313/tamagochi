@@ -42,10 +42,10 @@ def new_char():
 
 def pet_create(name, age, gender):
     pet = Pet(name, age, gender)
-    print(pet.__dict__)
+    start_game(pet) #здесь у нас будет функция начала игры
 
 def start_game(animal):
-    display.destroy()
+    display.destroy() #уничтожаются старые окна
     display_game = tk.Tk()
     label = tk.Label(display_game, text=f'Имя: {animal.name} \nВозраст: {animal.age} \nПол:{animal.gender}')
     label.grid(row = 0, column = 0)
@@ -68,8 +68,8 @@ def start_game(animal):
     label_en = tk.Label(display_game, text = animal.energy, bg='blue', height = percent(animal.energy), width = 6)
     label_mood = tk.Label(display_game, text = animal.mood, bg='green', height = percent(animal.mood), width = 6)
     label_hp.grid(row = 1, column = 1, sticky = tk.S)
-    label_en.grid(row = 1, column = 1, sticky = tk.S)
-    label_mood.grid(row = 1, column = 1, sticky = tk.S)
+    label_en.grid(row = 1, column = 2, sticky = tk.S)
+    label_mood.grid(row = 1, column = 3, sticky = tk.S)
 
 
     btn_hp = ttk.Button(display_game, text = "Дать еды")
