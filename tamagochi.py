@@ -116,6 +116,12 @@ def start_game(animal):
 
     display_game.after(5000, lambda: game_har2(animal))
 
+    def buff(animal, arg):
+        if arg == 'Покормить' and animal.hp < 100 and animal.money > 49:
+            animal.money -= 50
+            animal.hp += 10
+            label_money.configure(text = f'Всего денег {animal.money}')
+            label_hp.configure(height = percent(animal.hp), text = animal.hp)
 
 
 
