@@ -94,6 +94,32 @@ def start_game(animal):
 
     display_game.after(5000, lambda: game_har(animal))
 
+    def game_har1(animal):
+        if animal.energy > 0:
+            animal.energy -= 10
+            label_en.configure(height = percent(animal.energy), text = animal.energy)
+            display_game.after(5000, lambda: game_har(animal))
+        else:
+            animal.hp -= 10
+            label_hp.configure(height=percent(animal.hp), text=animal.hp)
+        display_game.after(5000, lambda: game_har2(animal))
+
+    display_game.after(5000, lambda: game_har1(animal))
+
+    def game_har2(animal):
+        if animal.moode > 0:
+            animal.mood -=10
+            label_mood.configure(height=percent(animal.mood), text=animal.mood)
+        else:
+            animal.energy -= 10
+            label_en.configure(height = percent(animal.energy), text = animal.energy)
+        display_game.after(5000, lambda: game_har1(animal))
+
+    display_game.after(5000, lambda: game_har2(animal))
+
+
+
+
     def work(animal):
         btn_hp.configure(state='disabled')
         btn_en.configure(state='disabled')
