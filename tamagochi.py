@@ -3,13 +3,22 @@ from tkinter import ttk
 
 from myClass import Pet
 import time
+import json
 
 def game():
     global display
     display = tk.Tk()
     display.geometry("400x400")
 
-    def load():
+    def loads():
+        try:
+            file = open('save.json', 'r')
+            save = json.load(file)
+            char = Pet(name = None, age=None, gender=None)
+            char.__dict__ = save
+            start_game(char)
+            file.close()
+
 
 
     btn1 = ttk.Button(display, text = "Начать новую игру", command = lambda: new_char())
