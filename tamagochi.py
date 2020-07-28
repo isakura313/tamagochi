@@ -98,6 +98,11 @@ def start_game(animal):
         display_game.destroy()
         animal.time = round(time.monotonic())
         game_over = tk.Tk()
+        label_game_over = tk.Label(game_over, text=f''
+                                   f'GAME OVER \n'
+                                   f'Ваш питомец покинул вас\n'
+                                   f'{animal.time} сек', font=('Calibri', 120))
+        label_game_over.grid(row = 0, column = 0)
 
 
 
