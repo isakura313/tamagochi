@@ -22,13 +22,10 @@ def game():
             label_no = tk.Label(text = 'Сохранение отсутствует')
             label_no.place(relx = 0.24, rely = 0.6)
 
-
-
-
     btn1 = ttk.Button(display, text = "Начать новую игру", command = lambda: new_char())
     btn1.place(x = 70, y = 120)
 
-    btn2 = ttk.Button(display, text = "Продолжить игру")
+    btn2 = ttk.Button(display, text = "Продолжить игру", command = lambda: loads())
     btn2.place(relx = 0.25, rely = 0.5)
     display.mainloop()
 
