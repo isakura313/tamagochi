@@ -9,6 +9,9 @@ def game():
     display = tk.Tk()
     display.geometry("400x400")
 
+    def load():
+
+
     btn1 = ttk.Button(display, text = "Начать новую игру", command = lambda: new_char())
     btn1.place(x = 70, y = 120)
 
