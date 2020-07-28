@@ -14,8 +14,10 @@ def game():
         try:
             file = open('save.json', 'r')
             save = json.load(file)
-            char = Pet(name = None, age=None, gender=None)
-            char.__dict__ = save
+            name = save["name"]
+            age = save["age"]
+            gender = save["gender"]
+            char = Pet(name = name, age=age, gender=gender)
             start_game(char)
             file.close()
         except:
