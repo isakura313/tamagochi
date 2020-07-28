@@ -18,6 +18,10 @@ def game():
             char.__dict__ = save
             start_game(char)
             file.close()
+        except:
+            label_no = tk.Label(text = 'Сохранение отсутствует')
+            label_no.place(relx = 0.24, rely = 0.6)
+
 
 
 
